@@ -26,6 +26,9 @@ namespace FM.UI.Site
                 app.UseDeveloperExceptionPage();
             }
 
+            //Delivery statics files to browser
+            app.UseStaticFiles();
+
             app.UseMvc(routes => {
                 //No longer need put name and template, just declare like below
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
