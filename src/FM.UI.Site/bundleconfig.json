@@ -1,0 +1,21 @@
+[
+  {
+    "outputFileName": "wwwroot/css/site.min.css",
+    "inputFiles": [
+      "wwwroot/css/site.css"
+    ]
+  },
+  {
+    "inputFiles": [
+      "wwwroot/lib/jquery/jquery.js",
+      "wwwroot/js/site.js"
+    ],
+    "outputFileName": "wwwroot/js/site.min.js"
+  },
+  {
+    "outputFileName": "wwwroot/lib/bootstrap/js/bootstrap.min.js",
+    "inputFiles": [
+      "wwwroot/lib/bootstrap/js/bootstrap.js"
+    ]
+  }
+]

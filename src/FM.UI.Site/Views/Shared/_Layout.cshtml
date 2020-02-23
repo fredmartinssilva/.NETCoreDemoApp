@@ -19,6 +19,7 @@
               asp-fallback-test-value="absolute"
               crossorigin="anonymous"
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" />
+        <link href="~/css/site.min.css" rel="stylesheet" />
     </environment>
 </head>
 <body>
@@ -48,7 +49,9 @@
     </div>
 
     <footer class="border-top footer text-muted">
-        <div class="container">Footer &copy;@DateTime.Now.Year</div>
+        <div class="container">
+            Footer &copy;@DateTime.Now.Year
+        </div>
     </footer>
 
     @*Javascripts files do not need load with the layout*@
@@ -69,6 +72,7 @@
                 crossorigin="anonymous"
                 integrity="sha256-E/V4cWE4qvAeO5MOhjtGtqDzPndRO1LBk8lJ/PR7CA4=">
         </script>
+        <script src="~/js/site.min.js"></script>
     </environment>
 </body>
 </html>
