@@ -29,8 +29,10 @@ namespace FM.UI.Site
             //Delivery statics files to browser
             app.UseStaticFiles();
 
-            app.UseMvc(routes => {
+            app.UseMvc(routes =>
+            {
                 //No longer need put name and template, just declare like below
+                routes.MapRoute("areas", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 routes.MapRoute("default", "{controller=Home}/{action=Index}/{id?}");
             });
         }
