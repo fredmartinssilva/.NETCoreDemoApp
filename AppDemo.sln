@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.902
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FM.UI.Site", "src\FM.UI.Site\FM.UI.Site.csproj", "{B16CB3CE-8AE0-4E38-9504-CCFD8F70425B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FM.Identity", "src\FM.Identity\FM.Identity.csproj", "{F802F4AC-16BE-4D49-A4EC-DBD1B18EA6CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B16CB3CE-8AE0-4E38-9504-CCFD8F70425B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B16CB3CE-8AE0-4E38-9504-CCFD8F70425B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B16CB3CE-8AE0-4E38-9504-CCFD8F70425B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F802F4AC-16BE-4D49-A4EC-DBD1B18EA6CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F802F4AC-16BE-4D49-A4EC-DBD1B18EA6CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F802F4AC-16BE-4D49-A4EC-DBD1B18EA6CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F802F4AC-16BE-4D49-A4EC-DBD1B18EA6CD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

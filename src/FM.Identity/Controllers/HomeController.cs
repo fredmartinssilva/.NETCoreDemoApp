@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FM.Identity.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FM.Identity.Controllers
 {
@@ -16,6 +17,12 @@ namespace FM.Identity.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [Authorize(Roles = "Admin")]
+        public IActionResult Admin()
         {
             return View();
         }
