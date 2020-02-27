@@ -1,6 +1,22 @@
-﻿@{
+﻿@using FM.Identity.Extensions
+@{
     ViewData["Title"] = "Admin";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Just Admin Page.</p>
+
+@{
+    if (this.IfClaim("Products", "Add")) {
+        <p>You just see this with allow add</p>
+    }
+}
+
+<div>
+    @Html.ActionLink("Home", "Admin").IfClaimShow(Context, "Products", "Read")
+</div>
+
+<br/>
+<div>
+    <a href="#" class="btn btn-danger" @Html.Raw(this.IfClaimShow("Products", "Delete"))>Delete</a>
+</div>

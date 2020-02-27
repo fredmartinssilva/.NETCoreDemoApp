@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using FM.Identity.Models;
 using Microsoft.AspNetCore.Authorization;
+using FM.Identity.Extensions;
 
 namespace FM.Identity.Controllers
 {
@@ -29,6 +30,12 @@ namespace FM.Identity.Controllers
 
         [Authorize(Policy = "Exclude")]
         public IActionResult AdminClaim()
+        {
+            return View("Admin");
+        }
+
+        [ClaimsAuthorize("Products", "Read")]
+        public IActionResult AdminCustom()
         {
             return View("Admin");
         }
