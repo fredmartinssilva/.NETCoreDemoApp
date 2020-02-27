@@ -45,6 +45,11 @@ namespace FM.Identity
                 .AddDefaultUI(Microsoft.AspNetCore.Identity.UI.UIFramework.Bootstrap4)
                 .AddEntityFrameworkStores<RegisterContext>();
 
+            services.AddAuthorization(options => 
+            {
+                options.AddPolicy("Exclude", policy => policy.RequireClaim("Exclude"));
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 

@@ -27,6 +27,12 @@ namespace FM.Identity.Controllers
             return View();
         }
 
+        [Authorize(Policy = "Exclude")]
+        public IActionResult AdminClaim()
+        {
+            return View("Admin");
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
