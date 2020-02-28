@@ -40,10 +40,35 @@ namespace FM.Identity.Controllers
             return View("Admin");
         }
 
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
+        [Route("error/{id:length(3,3)}")]
+        public IActionResult Error(int id)
         {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            var modelError = new ErrorViewModel();
+
+            if (id == 500)
+            {
+                modelError.Message = "Server Error! Try again or contact support.";
+                modelError.Title = "Error";
+                modelError.ErrorCode = id;
+            }
+            else if (id == 404)
+            {
+                modelError.Message = "Resource not found!";
+                modelError.Title = "Resource not found";
+                modelError.ErrorCode = id;
+            }
+            else if (id == 403)
+            {
+                modelError.Message = "Access denied!";
+                modelError.Title = "Access denied";
+                modelError.ErrorCode = id;
+            }
+            else
+            {
+                return StatusCode(400);
+            }
+
+            return View(modelError);
         }
     }
 }
