@@ -1,4 +1,6 @@
 ﻿using FM.Identity.Config;
+using KissLog.Apis.v1.Listeners;
+using KissLog.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -58,6 +60,14 @@ namespace FM.Identity
 
             // This code is necessary for apply identity on app
             app.UseAuthentication();
+
+            // make sure it is added after app.UseStaticFiles() and app.UseSession(), and before app.UseMvc()
+            app.UseKissLogMiddleware(options => {
+                options.Listeners.Add(new KissLogApiListener(new KissLog.Apis.v1.Auth.Application(
+                    Configuration["KissLog.OrganizationId"],
+                    Configuration["KissLog.ApplicationId"])
+                ));
+            });
 
             app.UseMvc(routes =>
             {

@@ -7,13 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 using FM.Identity.Models;
 using Microsoft.AspNetCore.Authorization;
 using FM.Identity.Extensions;
+using KissLog;
 
 namespace FM.Identity.Controllers
 {
     public class HomeController : Controller
     {
+        private readonly ILogger _logger;
+
+        public HomeController(ILogger logger)
+        {
+            this._logger = logger;
+        }
+
         public IActionResult Index()
         {
+            _logger.Warn("Warning message");
             return View();
         }
 
