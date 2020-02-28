@@ -14,10 +14,16 @@ namespace FM.Identity
         public Startup(IHostingEnvironment hostingEnvironment)
         {
             var builder = new ConfigurationBuilder()
+                // Path from folder base
                 .SetBasePath(hostingEnvironment.ContentRootPath)
                 .AddJsonFile("appsettings.json", true, true)
                 .AddJsonFile($"appsettings.{hostingEnvironment.EnvironmentName}.json", true, true)
                 .AddEnvironmentVariables();
+
+            if (hostingEnvironment.IsProduction())
+            {
+                builder.AddUserSecrets<Startup>();
+            }
 
             Configuration = builder.Build();
         }
